@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Booking
+  </div>
+
+  <div class='list-group'>
+    <div ng-repeat="item in bookings" class="list-group-item">
+     <span class="pull-right btn-group">
+      <a href="" class="btn btn-xs btn-danger" ng-click="delete(item)">
+        <i class="fa fa-trash-o"></i>
+      </a>
+    </span>
+      <h4 class="list-group-item-heading">
+        <a href="" ui-sref="app.viewBooking({id: item.id})">{{item.traveller.name}}</a>
+      </h4>
+      <p class="list-group-item-text">
+        {{item.tour.name}}
+      </p>
+
+      <p class="list-group-item-text">
+        {{item.Date | date:'medium'}}
+      </p>
+    </div>
+    <div ng-show="!bookings.length" class="list-group-item">
+      <h4 class="list-group-item-heading" translate>
+        There are no bookings
+      </h4>
+
+    </div>
+  </div>
+
+</div>
